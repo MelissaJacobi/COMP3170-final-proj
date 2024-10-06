@@ -1,0 +1,10 @@
+.container {
+    background-color: var(--accent-color);
+    height: 5rem;
+    width: 100%;
+}
+
+.logo {
+    height: 4rem;
+    width: 4rem;
+}

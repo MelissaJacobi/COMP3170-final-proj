@@ -1,0 +1,10 @@
+.appContainer {
+    width: 70%;
+    height: 100%;
+    margin: auto;
+    background-color: lightgrey;
+}
+
+.appContainer div {
+    height: 60rem;
+}

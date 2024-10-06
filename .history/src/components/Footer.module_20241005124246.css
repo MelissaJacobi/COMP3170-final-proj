@@ -1,0 +1,48 @@
+.container {
+    background-color: var(--primary-color);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 4rem;
+}
+
+.container div{
+    text-align: center;
+}
+
+.logo {
+    width: 6rem;
+    height: 6rem;
+}
+
+.siteTitle {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: var(--accent-color)
+}
+
+.container ul p {
+    color: var(--accent-color);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.container ul li {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0.5rem 0rem;
+    padding: 0;
+    list-style-type: none;
+}
+
+.socialIcon {
+    padding: 0.5rem;
+}

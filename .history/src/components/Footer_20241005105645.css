@@ -1,0 +1,13 @@
+.container {
+    background-color: var(--primary-color);
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.conttainer div{
+    background-color: red;
+}

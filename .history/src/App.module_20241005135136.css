@@ -1,0 +1,15 @@
+.appContainer {
+    width: 70%;
+    height: 100%;
+    margin: auto;
+    background-color: lightgrey;
+}
+
+.filler {
+    height: 70rem;
+}
+
+.banner {
+    width: 100%;
+    height: 40rem;
+}
