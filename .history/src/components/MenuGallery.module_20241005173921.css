@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+h2 {
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+    margin: 0;
+}
+
+.gallery {
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+}
+
+.galleryItem {
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+}

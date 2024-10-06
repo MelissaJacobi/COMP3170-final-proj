@@ -1,0 +1,20 @@
+.container {
+    background-color: var(--primary-color);
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 4rem;
+    width: 4rem;
+}
+
+.siteTitle {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-left: 1rem;
+}

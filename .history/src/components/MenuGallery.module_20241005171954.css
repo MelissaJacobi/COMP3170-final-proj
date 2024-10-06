@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    height: 200%; /* Full height of the viewport */
+}
+
+h2 {
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center; /* Center text within the element */
+    margin: 0;
+}
+
+.gallery {
+    width: 100%;
+    max-width: 600px; /* Optional: limit the width */
+    height: 1rem;
+    background-color: aliceblue;
+    margin-top: 1rem; /* Space between h2 and gallery */
+}
