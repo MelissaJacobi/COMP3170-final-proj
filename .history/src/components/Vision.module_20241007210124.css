@@ -42,15 +42,3 @@
       display: none;
     }
   }
-
-  @media (max-width: 1500px) {
-    .vision {
-      display:block;
-    }
-    .visionText {
-        width: 100%;
-    }
-    .visionPic {
-        width: 100%;
-    }
-  }

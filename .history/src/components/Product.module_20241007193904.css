@@ -1,0 +1,5 @@
+.container {
+    height: 10rem;
+    width: 7rem;
+    background-color: var(--primary-color);
+}

@@ -1,0 +1,11 @@
+.container {
+    height: 15rem;
+    width: 12rem;
+    margin: 1rem;
+}
+
+.productImg {
+    height: 10rem;
+    width: 9rem;
+    object-fit: cover;
+}
