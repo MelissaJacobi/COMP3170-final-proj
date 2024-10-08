@@ -1,0 +1,18 @@
+.container {
+    height: 15rem;
+    width: 12rem;
+    margin: 1rem;
+}
+
+.productImg {
+    height: 10rem;
+    width: 9rem;
+    object-fit: cover;
+}
+
+.container p {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}

@@ -27,16 +27,12 @@ export default function Menu() {
           </Link>
         </div>
         <div className={styles.option}>
-          <Link to="/menu/drinks">
-            <div></div>
-            <h2>Drinks</h2>
-          </Link>
+          <div></div>
+          <h2>Drinks</h2>
         </div>
         <div className={styles.option}>
-          <Link to="/menu/seasonal">
-            <div></div>
-            <h2>Seasonal</h2>
-          </Link>
+          <div></div>
+          <h2>Seasonal</h2>
         </div>
       </div>
     </div>

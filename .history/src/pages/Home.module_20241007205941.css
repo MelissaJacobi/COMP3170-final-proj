@@ -1,0 +1,10 @@
+.filler {
+    height: 35rem;
+  }
+
+  @media (max-width: 767px) {
+    .vision {
+      display: none;
+    }
+  }
+  

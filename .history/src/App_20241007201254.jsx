@@ -9,8 +9,6 @@ import Menu from './pages/menu';
 import Bread from './pages/Bread';
 import Pastries from './pages/Pastries';
 import Cakes from './pages/Cakes';
-import Drinks from './pages/Drinks';
-import Seasonal from './pages/Seasonal';
 
 function App() {
   return (
@@ -23,8 +21,6 @@ function App() {
           <Route path="/menu/bread" element={<Bread />} />
           <Route path="/menu/pastries" element={<Pastries />} />
           <Route path="/menu/cakes" element={<Cakes />} />
-          <Route path="/menu/drinks" element={<Drinks />} />
-          <Route path="/menu/seasonal" element={<Seasonal />} />
         </Routes>
         <Footer />
       </div>

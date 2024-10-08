@@ -43,14 +43,8 @@
     }
   }
 
-  @media (max-width: 1500px) {
+  @media (max-width: 1000px) {
     .vision {
       display:block;
-    }
-    .visionText {
-        width: 100%;
-    }
-    .visionPic {
-        width: 100%;
     }
   }

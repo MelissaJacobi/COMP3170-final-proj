@@ -1,3 +1,5 @@
+// src/pages/menu.jsx
+
 import { Link } from 'react-router-dom';
 import styles from './Menu.module.css';
 
@@ -10,33 +12,24 @@ export default function Menu() {
       <div className={styles.options}>
         <div className={styles.option}>
           <Link to="/menu/bread">
-            <div></div>
             <h2>Bread</h2>
           </Link>
         </div>
         <div className={styles.option}>
-          <Link to="/menu/pastries">
-            <div></div>
-            <h2>Pastries</h2>
-          </Link>
+          <div></div>
+          <h2>Pastries</h2>
         </div>
         <div className={styles.option}>
-          <Link to="/menu/cakes">
-            <div></div>
-            <h2>Cakes</h2>
-          </Link>
+          <div></div>
+          <h2>Cakes</h2>
         </div>
         <div className={styles.option}>
-          <Link to="/menu/drinks">
-            <div></div>
-            <h2>Drinks</h2>
-          </Link>
+          <div></div>
+          <h2>Drinks</h2>
         </div>
         <div className={styles.option}>
-          <Link to="/menu/seasonal">
-            <div></div>
-            <h2>Seasonal</h2>
-          </Link>
+          <div></div>
+          <h2>Seasonal</h2>
         </div>
       </div>
     </div>

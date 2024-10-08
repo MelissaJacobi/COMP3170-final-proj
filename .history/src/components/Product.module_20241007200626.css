@@ -1,0 +1,36 @@
+.container {
+    height: 16rem;
+    width: 12rem;
+    margin: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: white;
+    padding: 0.5rem;
+}
+
+.productImg {
+    height: 100%;
+    width: 9rem;
+    object-fit: cover;
+}
+
+.productName {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.infoAndCart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    color: var(--accent-color)
+}
