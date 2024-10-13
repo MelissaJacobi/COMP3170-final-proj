@@ -1,0 +1,9 @@
+.cartContainer {
+  width: 100%;
+}
+
+.cartItems {
+  max-height: 300px; 
+  overflow-y: auto;
+  margin-bottom: 20px;
+}

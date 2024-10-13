@@ -1,5 +1,3 @@
-// src/App.jsx
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import styles from './App.module.css';
 import Header from './components/Header';
@@ -11,6 +9,8 @@ import Pastries from './pages/Pastries';
 import Cakes from './pages/Cakes';
 import Drinks from './pages/Drinks';
 import Seasonal from './pages/Seasonal';
+import OrderPickUp from './pages/OrderPickUp';
+import OrderDelivery from './pages/OrderDelivery';
 
 function App() {
   return (
@@ -25,6 +25,8 @@ function App() {
           <Route path="/menu/cakes" element={<Cakes />} />
           <Route path="/menu/drinks" element={<Drinks />} />
           <Route path="/menu/seasonal" element={<Seasonal />} />
+          <Route path="/orderpickup" element={<OrderPickUp />} />
+          <Route path="/orderdelivery" element={<OrderDelivery />} />
         </Routes>
         <Footer />
       </div>
