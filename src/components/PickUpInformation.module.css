@@ -1,0 +1,73 @@
+.formContainer {                 
+  padding: 20px;                               
+  margin: 0 auto; 
+}
+
+h2 {
+  margin-bottom: 20px;
+  text-align: left; 
+  font-weight: 600;
+  font-size: 1.5em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; 
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+input[type="tel"],
+input[type="email"],
+input[type="text"] {
+  width: 100%;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+.checkboxRow {
+  display: flex;
+  align-items: center; 
+  justify-content: flex-start; 
+  gap: 10px; 
+  margin-bottom: 20px;
+}
+
+.checkboxInput {
+  width: auto; 
+}
+
+.checkboxLabel {
+  margin-left: 0; 
+  white-space: nowrap; 
+  margin-bottom: 15px; 
+}
