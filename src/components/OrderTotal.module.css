@@ -1,0 +1,53 @@
+.orderTotalContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.subtotal, .tax, .grandTotal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 55%;
+    margin: 0.5rem;
+}
+
+.grandTotal {
+    font-size: 40px;
+    font-weight: 300;
+}
+
+.line {
+    background-color: #9a9a9a;
+    height: 0.2rem;
+    width: 55%;
+}
+
+.lineThin {
+    background-color: #9a9a9a;
+    height: 0.1rem;
+    width: 55%;
+}
+
+.btns, Link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    margin-bottom: 1rem;
+}
+
+.backBtn {
+    background-color: inherit;
+    color: #6A2E35;
+}
+
+.checkoutBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6A2E35;
+    height: 2.7rem;
+    border-radius: 0;
+}

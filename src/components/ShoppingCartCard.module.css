@@ -1,0 +1,83 @@
+.cardContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    padding: 2rem;
+    margin: 1rem;
+}
+
+.cardContainer div, .cardContainer p {
+    flex-basis: 20%;
+    text-align: center;
+}
+
+.imgName {
+    display: flex;
+    flex-basis: 40%;
+    align-items: center;
+}
+
+.imgName img {
+    width: 206px;
+    height: 140px;
+    margin-right: 15px;
+    flex-shrink: 0;
+    border-radius: 20px;
+}
+
+.imgName h2 {
+    font-weight: 200;
+    font-size: 40px;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quantity p {
+    font-size: 2rem;
+    color:#6A2E35;
+}
+
+.amount {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.addBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: inherit;
+    border: 1.5px solid #6A2E35;
+    color: #6A2E35;
+    font-weight: bold;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    width: 50px;
+    height: 40px;
+    margin-right: 0.1rem;
+    font-size: 2.5rem;
+    font-weight: 100;
+}
+
+.subtractBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: inherit;
+    border: 1.5px solid #6A2E35;
+    color: #6A2E35;
+    font-weight: bold;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    width: 50px;
+    height: 40px;
+    margin-left: 0.1rem;
+    font-size: 2.5rem;
+    font-weight: 100;
+}

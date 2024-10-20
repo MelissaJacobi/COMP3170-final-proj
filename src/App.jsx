@@ -11,6 +11,7 @@ import Drinks from './pages/Drinks';
 import Seasonal from './pages/Seasonal';
 import OrderPickUp from './pages/OrderPickUp';
 import OrderDelivery from './pages/OrderDelivery';
+import ShoppingCart from './pages/ShoppingCart';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/menu/seasonal" element={<Seasonal />} />
           <Route path="/orderpickup" element={<OrderPickUp />} />
           <Route path="/orderdelivery" element={<OrderDelivery />} />
+          <Route path="/shoppingcart" element={<ShoppingCart/>}/>
         </Routes>
         <Footer />
       </div>
