@@ -18,21 +18,9 @@
     line-height: normal;
 }
 
-.options {
+.reviews {
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    padding: 4rem;
-}
-
-.option div {
-    width: 9rem;
-    height: 9rem;
-    border-radius: 50%;
-    background-color: var(--primary-color);
-    margin: 1rem 4rem;
-}
-
-.option h2 {
-    text-align: center;
+    flex-wrap: wrap;
 }

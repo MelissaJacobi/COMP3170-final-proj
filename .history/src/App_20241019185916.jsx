@@ -13,7 +13,7 @@ import OrderPickUp from './pages/OrderPickUp';
 import OrderDelivery from './pages/OrderDelivery';
 import ShoppingCart from './pages/ShoppingCart';
 import Profile from './pages/Profile';
-import Reviews from './pages/reviews';
+import Reviews from './pages/Reviews';
 
 function App() {
   return (

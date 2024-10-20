@@ -17,7 +17,7 @@ export default function Header() {
       <Link to="/" className={styles.links}>Home</Link>
       <Link to="/Menu" className={styles.links}>Menu</Link>
       <Link to="/OrderPickUp" className={styles.links}>Order</Link>
-      <Link to="/Reviews" className={styles.links}>Reviews</Link>
+      <Link to="/reviews" className={styles.links}>Reviews</Link>
       <div>
         <Link to="/ShoppingCart">
           <PiShoppingCart className={styles.icon} />
