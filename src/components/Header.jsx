@@ -1,9 +1,10 @@
 // Header.tsx
-import { Link } from 'react-router-dom';
+import { Link, Route, Router, Routes } from 'react-router-dom';
 import styles from './Header.module.css';
 import logo from "../assets/images/logo.png";
 import { PiShoppingCart } from "react-icons/pi";
 import { VscAccount } from "react-icons/vsc";
+import OverallCart from '../pages/ShoppingCart';
 
 export default function Header() {
   return (
@@ -16,7 +17,9 @@ export default function Header() {
       <Link to="/Menu" className={styles.links}>Menu</Link>
       <Link to="/OrderPickUp" className={styles.links}>Order</Link>
       <div>
-        <PiShoppingCart className={styles.icon} />
+        <Link to="/ShoppingCart">
+          <PiShoppingCart className={styles.icon} />
+        </Link>
         <VscAccount className={styles.icon} />
       </div>
     </div>
