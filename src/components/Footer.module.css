@@ -1,5 +1,4 @@
 .container {
-    background-color: var(--primary-color);
     height: 100%;
     width: 100%;
     display: flex;
@@ -23,7 +22,10 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    color: var(--accent-color)
+    color: var(--accent-color); 
+    font-family: "Fraunces", serif; 
+    margin-bottom: 1rem; 
+    margin-top: -0.5rem; 
 }
 
 .container ul p {
@@ -32,6 +34,8 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    font-family: var(--heading-text); 
+    margin-bottom: 2rem; 
 }
 
 .container ul li {
@@ -60,5 +64,4 @@
     font-weight: 400;
     line-height: normal;
     color: var(--accent-color);
-    background-color: var(--primary-color);
 }

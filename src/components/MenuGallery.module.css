@@ -13,16 +13,22 @@ h2 {
     line-height: normal;
     text-align: center;
     margin: 0;
+    font-family: var(--heading-text); 
+}
+
+.heading {
+    font-size: 30px; 
+    color: var(--accent-color); 
 }
 
 .gallery {
     width: 100%;
-    margin-top: 1rem;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     height: 100%;
     padding: 1rem 7rem;
+    margin-bottom: 3rem; 
 }
 
 .galleryItem {
@@ -32,4 +38,45 @@ h2 {
     display: flex;
     justify-content: center;
     margin: 1rem;
+    overflow: hidden; 
+}
+
+.galleryItem img {
+    height: 15rem; 
+    width: 15rem; 
+    object-fit: cover; 
+    z-index: 0; 
+}
+
+.galleryItem p {
+    z-index: 1;
+    font-family: var(--heading-text); 
+    color: var(--accent-color); 
+    font-size: 24px; 
+    margin-top: 1rem; 
+    position: absolute; 
+}
+
+.button {
+    width: 7rem; 
+    background-color: var(--accent-color); 
+    color: white; 
+    font-family: "Poppins", sans-serif; 
+    border-radius: 0; 
+    margin-top: -3rem; 
+    margin-bottom: 3rem; 
+}
+
+.button:hover {
+    box-shadow: 1px 1px 5px black; 
+    background-color: var(--accent-color); 
+}
+
+@media (min-width: 1920px) and (min-height: 1080px) {
+
+    .gallery {
+        padding: 1rem 16rem; 
+        margin-bottom: 3rem; 
+        margin-top: -1rem; 
+    }
 }

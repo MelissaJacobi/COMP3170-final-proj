@@ -11,11 +11,22 @@
     background-color: var(--primary-color);
 }
 
+.banner img {
+    height: 15rem; 
+    width: 100%; 
+    object-fit: cover; 
+    z-index: 0; 
+}
+
 .container h1 {
     font-size: 48px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    position: absolute; 
+    z-index: 1; 
+    color: var(--tertiary-color); 
+    font-family: var(--heading-text); 
 }
 
 .options {
@@ -25,14 +36,20 @@
     padding: 4rem;
 }
 
-.option div {
+.option img {
     width: 9rem;
     height: 9rem;
     border-radius: 50%;
-    background-color: var(--primary-color);
     margin: 1rem 4rem;
+    object-fit: cover; 
 }
 
 .option h2 {
     text-align: center;
 }
+
+.link {
+    text-decoration: none; 
+    color: var(--accent-color); 
+}
+

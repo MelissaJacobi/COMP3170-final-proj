@@ -41,7 +41,7 @@ export default function OrderTotal({ products }) {
                     <Link to="/">
                         <button className={styles.backBtn}>Back to Shopping</button>
                     </Link>
-                    <Link to="/OrderDelivery">
+                    <Link to="/OrderPickUp">
                     <button className={styles.checkoutBtn}>Checkout</button>
                     </Link>
                 </div>

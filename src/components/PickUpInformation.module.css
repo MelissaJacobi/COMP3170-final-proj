@@ -8,6 +8,8 @@ h2 {
   text-align: left; 
   font-weight: 600;
   font-size: 1.5em;
+  font-family: var(--heading-text); 
+  color: var(--text-color); 
 }
 
 form {
@@ -26,7 +28,7 @@ input, select {
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 0 !important; 
   font-size: 14px;
   box-sizing: border-box;
 }
@@ -37,21 +39,22 @@ input[type="text"] {
   width: 100%;
 }
 
-button {
+.button {
   width: 100%;
   padding: 15px;
-  background-color: #333;
+  background-color: var(--accent-color);
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 0;
   cursor: pointer;
   font-size: 16px;
   text-align: center;
   transition: background-color 0.3s ease;
+  font-family: "Poppins", serif; 
 }
 
-button:hover {
-  background-color: #555;
+.button:hover {
+  background-color: var(--accent-color);
 }
 
 .checkboxRow {

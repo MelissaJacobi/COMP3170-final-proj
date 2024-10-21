@@ -1,13 +1,13 @@
 import styles from "./Carousel.module.css"
-import banner from "../assets/images/banner.jpg"
+import carousel from "../assets/images/carousel.png"
 
 function Carousel() {
 
   return (
     <>
-        <h1 className={styles.header}>Exutoire</h1>
+        <h1 className={`${styles.header} fraunces`}>EXUTOIRE</h1>
         <p className={styles.subtitle}>Bakery</p>
-        <img src={banner} alt="banner image" className={styles.banner}></img>
+        <img src={carousel} alt="banner image" className={styles.banner}></img>
     </>
   )
 }

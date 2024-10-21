@@ -1,5 +1,5 @@
 .container {
-    background-color: var(--primary-color);
+    background-color: none;
     width: 100%;
     height: 5rem;
     display: flex;
@@ -9,7 +9,6 @@
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -20,10 +19,12 @@
 .siteTitle {
     font-size: 12px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 900;
     line-height: normal;
     margin-left: 1rem;
-    color: var(--accent-color)
+    color: var(--accent-color); 
+    font-family: "Frances", serif; 
+    text-decoration: none; 
 }
 
 .container div {
@@ -36,7 +37,12 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    color: var(--accent-color)
+    color: var(--accent-color); 
+    text-decoration: none; 
+}
+
+.links:hover {
+    text-shadow: 2px 2px 5px var(--accent-color); 
 }
 
 .icon {
@@ -44,4 +50,9 @@
     width: 1.5rem;
     margin: 1rem;
     color: var(--accent-color)
+}
+
+.icon:hover {
+    cursor: pointer; 
+    filter: drop-shadow(1px 1px 3px var(--accent-color));
 }

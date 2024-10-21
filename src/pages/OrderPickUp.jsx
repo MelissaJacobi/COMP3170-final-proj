@@ -4,6 +4,7 @@ import Cart from "../components/Cart";
 import OrderButton from "../components/OrderButton";
 import styles from './OrderPickUp.module.css';
 import placeholder from "../assets/images/placeholder.jpg";
+import checkoutBar from "../assets/images/checkoutBar.svg"; 
 
 const sampleItems = [
   { name: 'Yule Log', price: 15.00, quantity: 1, image: placeholder },
@@ -16,18 +17,23 @@ const total = subtotal;
 
 export default function OrderPickUp() {
   return (
-    <div className={styles.container}>
-      <div className={styles.pickupform}>
-        <div className={styles.orderButton}>
-          <OrderButton selectedOption="pickup" />
-        </div>  
-        <PickUpInformation />
+    <>
+      <div className={styles.bar}>
+          <img src={checkoutBar} alt="checkout bar" className={styles.checkoutBar}/>
       </div>
+      <div className={styles.container}>
+        <div className={styles.pickupform}>
+          <div className={styles.orderButton}>
+            <OrderButton selectedOption="pickup" />
+          </div>  
+          <PickUpInformation />
+        </div>
 
-      <div className={styles.cartsection}>
-        <Cart items={sampleItems} subtotal={subtotal} total={total} />
+        <div className={styles.cartsection}>
+          <Cart items={sampleItems} subtotal={subtotal} total={total} />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

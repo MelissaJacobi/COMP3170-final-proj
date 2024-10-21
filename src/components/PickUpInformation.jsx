@@ -58,7 +58,7 @@ export default function PickUpInformation() {
             <label className={styles.checkboxLabel} for="save-info">Save contact information</label>
         </div>
         
-        <button type="submit">Continue to payment</button>
+        <button className={styles.button} type="submit">Continue to payment</button>
       </form>
     </div>
   )

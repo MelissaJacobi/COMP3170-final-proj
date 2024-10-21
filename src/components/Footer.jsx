@@ -13,7 +13,7 @@ export default function Footer() {
     <>
       <div className={styles.container}>
         <div>
-            <p className={styles.siteTitle}>Exutoire</p>
+            <p className={styles.siteTitle}>EXUTOIRE</p>
             <img src={logo} alt="Logo" className={styles.logo}/>           
         </div>
         <ul>
