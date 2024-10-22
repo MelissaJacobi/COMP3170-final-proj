@@ -1,26 +1,26 @@
 import styles from "./Profile.module.css";
-import placeholder from "../assets/images/placeholder.jpg";
+import profilephoto from "../assets/images/profilephoto.jpg";
 
 export default function Profile() {
     return (
         <>
             <div className={styles.profileContainer}>
-                <img src={placeholder}/>
-                <h1>Hello, Guest!</h1>
+                <img src={profilephoto}/>
+                <h1>Hello, Candace!</h1>
                 <form>
                     <div className={styles.nameInput}>
                         <div>
                             <label>Last Name</label>
-                            <input type="text" placeholder="Doe"/>
+                            <input type="text" placeholder="Shmidt"/>
                         </div>
                         <div>
                             <label>First Name</label>
-                            <input type="text" placeholder="Jane"/>
+                            <input type="text" placeholder="Candace"/>
                         </div>
                     </div>
                     <div className={styles.emailInput}>
                         <label>E-Mail</label>
-                        <input type="text" placeholder="example@email.com"/>
+                        <input type="text" placeholder="cshmidt@email.com"/>
                         <label>Phone Number</label>
                         <input type="text" placeholder="(123) 456-7890"/>
                     </div>

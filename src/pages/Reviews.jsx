@@ -1,10 +1,12 @@
 import styles from "./Reviews.module.css"
 import Review from "../components/Review";
+import reviews from "../assets/images/reviews.jpg";
 
 export default function Reviews() {
     return (
       <div className={styles.container}>
         <div className={styles.banner}>
+            <img src={reviews} alt="baking"/>
             <h1>Reviews</h1>
         </div>
         <div className={styles.reviewFormContainer}>

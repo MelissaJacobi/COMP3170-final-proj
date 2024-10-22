@@ -50,4 +50,15 @@
     background-color: #6A2E35;
     height: 2.7rem;
     border-radius: 0;
+    text-decoration: none;
+}
+
+.backBtn:hover {
+    background-color: inherit;
+    color: black;
+}
+
+.checkoutBtn:hover {
+    background-color: var(--accent-color);
+    box-shadow: 1px 1px 4px grey;
 }
