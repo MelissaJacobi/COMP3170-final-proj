@@ -1,7 +1,4 @@
 import styles from "./ShoppingCartCard.module.css";
-import strawberrycake from "../assets/images/strawberrycake.png";
-import yule_log from "../assets/images/yule_log.jpg";
-import sourdough from "../assets/images/sourdough.jpeg";
 
 export default function ShoppingCartCard( {product} ) {
 
