@@ -24,7 +24,7 @@ export default function Header() {
         <Link to="/Profile">
           <VscAccount className={styles.icon} />
         </Link>
-        <Link to="/">
+        <Link to="/Favourites">
           <img src={Heart} alt="heart icon" className={styles.icon}/>
         </Link>
       </div>
