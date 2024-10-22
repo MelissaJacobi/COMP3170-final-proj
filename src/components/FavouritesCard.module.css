@@ -1,0 +1,41 @@
+.favouritesCardContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding: 2.4rem;
+    margin: 0.7rem;
+    width: 35%;
+    background-color: var(--background-color);
+    box-shadow: 1px 1px 4px grey;
+}
+
+.favouritesCardContainer img {
+    width: 15rem;
+    height: 15rem;
+    margin-bottom: 1rem;
+}
+
+.texts {
+    margin-left: -6rem;
+}
+
+.removeBtn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: inherit;
+    cursor: pointer;
+    width: 15%;
+    color: var(--accent-color);
+}
+
+.removeBtn:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+}

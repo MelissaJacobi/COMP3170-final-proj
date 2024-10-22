@@ -14,6 +14,7 @@ import OrderDelivery from './pages/OrderDelivery';
 import ShoppingCart from './pages/ShoppingCart';
 import Profile from './pages/Profile';
 import Reviews from './pages/Reviews';
+import Favourites from './pages/Favourites';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="/shoppingcart" element={<ShoppingCart/>}/>
           <Route path="/profile" element={<Profile />}/>
           <Route path="/Reviews" element={<Reviews />}/>
+          <Route path="/Favourites" element={<Favourites />} />
         </Routes>
         <Footer />
       </div>

@@ -1,0 +1,39 @@
+.favouritesContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.favouriteProducts {
+    display: flex;
+    flex-direction: row;
+}
+
+.banner {
+    width: 100%;
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+  
+.banner img {
+    height: 15rem; 
+    width: 100%; 
+    object-fit: cover; 
+    z-index: 0; 
+}
+  
+.banner h1 {
+    position: absolute;
+    color: var(--tertiary-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1;
+    text-align: center;
+    font-family: var(--heading-text);
+    font-size: 48px;
+}
