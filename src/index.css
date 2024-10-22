@@ -15,7 +15,7 @@
 body {
   font-family: "Poppins", sans-serif;
   line-height: 1.6;
-  background-color: #f4f4f4;
+  background-color: var(--background-color);
 }
 
 :root {
@@ -23,7 +23,7 @@ body {
   --secondary-color: lightblue;
   --accent-color: #6A2E35;
   --tertiary-color: #E1AA7D; 
-  --background-color: white;
+  --background-color: #FFFAFA;
   --text-color: #2E2836;
   --heading-text: "Bitter", serif; 
 }

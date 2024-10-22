@@ -47,6 +47,10 @@
     position: absolute; 
 }
 
+.link:hover {
+    color: #000;
+}
+
 @media (max-width: 767px) {
     .vision {
       display: none;

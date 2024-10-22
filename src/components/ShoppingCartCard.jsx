@@ -1,5 +1,7 @@
 import styles from "./ShoppingCartCard.module.css";
-import placeholder from "../assets/images/placeholder.jpg"
+import strawberrycake from "../assets/images/strawberrycake.png";
+import yule_log from "../assets/images/yule_log.jpg";
+import sourdough from "../assets/images/sourdough.jpeg";
 
 export default function ShoppingCartCard( {product} ) {
 
@@ -7,7 +9,7 @@ export default function ShoppingCartCard( {product} ) {
         <>
             <div className={styles.cardContainer}>
                 <div className={styles.imgName}>
-                    <img src={placeholder}></img>
+                    <img src={product.image} alt={product.alttext}/>
                     <h2>{product.name}</h2>
                 </div>
                 <p>{product.price}</p>

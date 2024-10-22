@@ -1,6 +1,9 @@
 import styles from "./ShoppingCart.module.css";
 import ShoppingCartCard from "../components/ShoppingCartCard";
 import OrderTotal from "../components/OrderTotal";
+import strawberrycake from "../assets/images/strawberrycake.png";
+import yule_log from "../assets/images/yule_log.jpg";
+import sourdough from "../assets/images/sourdough.jpeg";
 
 export default function ShoppingCart() {
 
@@ -10,21 +13,27 @@ export default function ShoppingCart() {
             name: "Yule Log",
             price: 15.00,
             quantity: 1,
-            amount: 15.00
+            amount: 15.00,
+            image: yule_log,
+            alttext: "yule log cake"
         },
         {
             id: 2,
             name: "Sourdough",
             price: 8.00,
             quantity: 2,
-            amount: 16.00
+            amount: 16.00,
+            image: sourdough,
+            alttext: "sourdough"
         },
         {
             id: 3,
             name: "Strawberry Shortcake 8'",
             price: 48.00,
             quantity: 1,
-            amount: 48.00
+            amount: 48.00,
+            image: strawberrycake,
+            alttext: "strawberrycake"
         }
     ]
 
