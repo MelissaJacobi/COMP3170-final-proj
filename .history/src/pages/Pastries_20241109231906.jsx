@@ -13,12 +13,14 @@ export default function Pastries() {
   const handleAddProduct = (e) => {
     e.preventDefault();
     if (productName.trim() && productPrice.trim() && productDescription.trim() && productImageUrl.trim()) {
+      // Add new product with all details to array
       setProducts([...products, { 
         name: productName,
         price: productPrice,
         description: productDescription,
         imageUrl: productImageUrl
       }]);
+      // Clear inputs after adding
       setProductName("");
       setProductPrice("");
       setProductDescription("");
@@ -36,10 +38,12 @@ export default function Pastries() {
         <h1>Pastries</h1>
       </div>
 
+      {/* Button to toggle form visibility */}
       <button onClick={toggleFormVisibility} className={styles.toggleFormButton}>
         {showForm ? "Hide Form" : "Add New Product"}
       </button>
 
+      {/* Collapsible form */}
       {showForm && (
         <form onSubmit={handleAddProduct} className={styles.addProductForm}>
           <input
@@ -56,6 +60,12 @@ export default function Pastries() {
             placeholder="Enter product price"
             className={styles.productInput}
           />
+          <textarea
+            value={productDescription}
+            onChange={(e) => setProductDescription(e.target.value)}
+            placeholder="Enter product description"
+            className={styles.productInput}
+          />
           <input
             type="text"
             value={productImageUrl}
@@ -63,16 +73,11 @@ export default function Pastries() {
             placeholder="Enter image URL"
             className={styles.productInput}
           />
-          <textarea
-            value={productDescription}
-            onChange={(e) => setProductDescription(e.target.value)}
-            placeholder="Enter product description"
-            className={styles.productInput}
-          />
           <button type="submit" className={styles.addButton}>Add Product</button>
         </form>
       )}
 
+      {/* Display products */}
       <div className={styles.products}>
         {products.map((product, index) => (
           <Product 

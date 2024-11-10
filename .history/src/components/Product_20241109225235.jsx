@@ -4,7 +4,7 @@ import placeholder from "../assets/images/placeholder.jpg";
 import { PiShoppingCart } from "react-icons/pi";
 import Heart from "../assets/images/Heart.svg"; 
 
-export default function Product({ name, price, description, imageUrl }) { // Accept new props
+export default function Product() {
   const [showPopup, setShowPopup] = useState(false);
   const [selectedSize, setSelectedSize] = useState("8\"");
   const [quantity, setQuantity] = useState(1);
@@ -38,11 +38,11 @@ export default function Product({ name, price, description, imageUrl }) { // Acc
   return (
     <div>
       <div className={styles.container} onClick={handleContainerClick}>
-        <img src={imageUrl || placeholder} className={styles.productImg} alt={name || "Product"} /> {/* Display image or placeholder */}
+        <img src={placeholder} className={styles.productImg} alt="Product" />
         <img src={Heart} className={styles.heartIcon} alt="Heart Icon" />
-        <p className={styles.productName}>{name || "Product Name"}</p> {/* Display the name */}
+        <p className={styles.productName}>Product Name</p>
         <div className={styles.infoAndCart}>
-          <p>${price || "0.00"}</p> {/* Display the price */}
+          <p>$0.00</p>
           <PiShoppingCart className={styles.icon} />
         </div>
       </div>
@@ -50,9 +50,9 @@ export default function Product({ name, price, description, imageUrl }) { // Acc
       {showPopup && (
         <div className={styles.popupOverlay} onClick={handleOverlayClick}>
           <div className={styles.popup}>
-            <p className={styles.popupProductName}>{name || "Product Name"}</p>
-            <img src={imageUrl || placeholder} className={styles.popupImg} alt={name || "Product"} /> {/* Display image or placeholder */}
-            <p className={styles.popupDescription}>{description || "Product details and description go here."}</p> {/* Display description */}
+            <p className={styles.popupProductName}>Product Name</p>
+            <img src={placeholder} className={styles.popupImg} alt="Product" />
+            <p className={styles.popupDescription}>Product details and description go here.</p>
             <div className={styles.menuAndPrice}>
               <select
                 id="sizeSelect"
@@ -64,7 +64,7 @@ export default function Product({ name, price, description, imageUrl }) { // Acc
                 <option value="12">12"</option>
                 <option value="16">16"</option>
               </select>
-              <p className={styles.popupPrice}>${price || "0.00"}</p>
+              <p className={styles.popupPrice}>$0.00</p>
             </div>
             <div className={styles.quantityAndAddBtn}>
               <div className={styles.quantity}>
@@ -78,6 +78,7 @@ export default function Product({ name, price, description, imageUrl }) { // Acc
               </div>
               <button className={styles.addToCart}>Add to Cart</button>
             </div>
+            
           </div>
         </div>
       )}

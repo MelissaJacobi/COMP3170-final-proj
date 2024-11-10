@@ -56,17 +56,17 @@ export default function Pastries() {
             placeholder="Enter product price"
             className={styles.productInput}
           />
+          <textarea
+            value={productDescription}
+            onChange={(e) => setProductDescription(e.target.value)}
+            placeholder="Enter product description"
+            className={styles.productInput}
+          />
           <input
             type="text"
             value={productImageUrl}
             onChange={(e) => setProductImageUrl(e.target.value)}
             placeholder="Enter image URL"
-            className={styles.productInput}
-          />
-          <textarea
-            value={productDescription}
-            onChange={(e) => setProductDescription(e.target.value)}
-            placeholder="Enter product description"
             className={styles.productInput}
           />
           <button type="submit" className={styles.addButton}>Add Product</button>
