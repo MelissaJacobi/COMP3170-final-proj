@@ -1,6 +1,5 @@
 .container {
     width: 100%;
-    text-align: center;
 }
 
 .banner {
@@ -35,17 +34,7 @@
     border: 2px var(--accent-color) solid;
 }
 
-.toggleFormButton:hover {
-    width: 50%;
-    margin: 1rem 0;
-    color: var(--background-color);
-    border: 2px var(--accent-color) solid;
-}
-
 .addProductForm {
     width: 50%;
     margin: auto;
-    background-color: var(--background-color);
-    padding: 2rem;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
