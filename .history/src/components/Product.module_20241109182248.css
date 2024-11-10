@@ -155,12 +155,3 @@
     background-color: #6A2E35;
     color: #ffff;
 }
-
-.quantityAndAddBtn {
-    display: flex;
-    justify-content: space-between;
-}
-
-.addToCart {
-    width: 8rem;
-}

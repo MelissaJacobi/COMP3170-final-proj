@@ -6,8 +6,8 @@ import Heart from "../assets/images/Heart.svg";
 
 export default function Product() {
   const [showPopup, setShowPopup] = useState(false);
-  const [selectedSize, setSelectedSize] = useState("8\"");
-  const [quantity, setQuantity] = useState(1);
+  const [selectedSize, setSelectedSize] = useState("8\""); // Default to 8"
+  const [quantity, setQuantity] = useState(1); // Default to 1
 
   const handleContainerClick = () => {
     setShowPopup(true);
@@ -52,6 +52,7 @@ export default function Product() {
           <div className={styles.popup}>
             <p className={styles.popupProductName}>Product Name</p>
             <img src={placeholder} className={styles.popupImg} alt="Product" />
+            <p className={styles.popupPrice}>$0.00</p>
             <p className={styles.popupDescription}>Product details and description go here.</p>
             <div className={styles.menuAndPrice}>
               <select
@@ -66,19 +67,15 @@ export default function Product() {
               </select>
               <p className={styles.popupPrice}>$0.00</p>
             </div>
-            <div className={styles.quantityAndAddBtn}>
-              <div className={styles.quantity}>
-                <button className={styles.subtractBtn} onClick={handleSubtractQuantity}>
-                  &#8722;
-                </button>
-                <p>{quantity}</p>
-                <button className={styles.addBtn} onClick={handleAddQuantity}>
-                  &#43;
-                </button>
-              </div>
-              <button className={styles.addToCart}>Add to Cart</button>
+            <div className={styles.quantity}>
+              <button className={styles.subtractBtn} onClick={handleSubtractQuantity}>
+                &#8722;
+              </button>
+              <p>{quantity}</p>
+              <button className={styles.addBtn} onClick={handleAddQuantity}>
+                &#43;
+              </button>
             </div>
-            
           </div>
         </div>
       )}

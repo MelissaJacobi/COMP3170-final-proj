@@ -52,6 +52,7 @@ export default function Product() {
           <div className={styles.popup}>
             <p className={styles.popupProductName}>Product Name</p>
             <img src={placeholder} className={styles.popupImg} alt="Product" />
+            <p className={styles.popupPrice}>$0.00</p>
             <p className={styles.popupDescription}>Product details and description go here.</p>
             <div className={styles.menuAndPrice}>
               <select

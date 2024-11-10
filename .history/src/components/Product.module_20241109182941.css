@@ -162,5 +162,6 @@
 }
 
 .addToCart {
-    width: 8rem;
+    margin: 2rem;
+    background-color: red;
 }
