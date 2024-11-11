@@ -1,8 +1,8 @@
 .favouritesCardContainer {
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    flex-wrap: wrap;
     align-items: center;
     text-align: left;
     padding: 2.4rem;
@@ -13,15 +13,17 @@
 }
 
 .favouritesCardContainer img {
-    width: 100%;
+    width: 15rem;
+    height: 15rem;
     margin-bottom: 1rem;
 }
 
 .texts {
+    margin-left: -6rem;
 }
 
 .texts p {
-    width: 100%;
+    width: 7rem;
 }
 
 .removeBtn {

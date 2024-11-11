@@ -1,23 +1,12 @@
-import { useState, useEffect } from "react";
 import styles from "./Favourites.module.css";
 import FavouritesCard from "../components/FavouritesCard";
 import favouritesbanner from "../assets/images/favouritesbanner.jpg";
 
 export default function Favourites() {
-    const [favorites, setFavorites] = useState(
-        JSON.parse(localStorage.getItem("favorites")) || []
-    );
+    // Retrieve favorite products from localStorage
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-    useEffect(() => {
-        localStorage.setItem("favorites", JSON.stringify(favorites));
-    }, [favorites]);
-
-    const removeFromFavorites = (index) => {
-        const updatedFavorites = favorites.filter((_, i) => i !== index);
-        setFavorites(updatedFavorites); 
-    };
-
-    return (
+    return(
         <div className={styles.favouritesContainer}>
             <div className={styles.banner}>
                 <img src={favouritesbanner} alt="favourites banner" />
@@ -32,7 +21,6 @@ export default function Favourites() {
                             price={product.price} 
                             description={product.description} 
                             imageUrl={product.imageUrl}
-                            onRemove={() => removeFromFavorites(index)}
                         />
                     ))
                 ) : (

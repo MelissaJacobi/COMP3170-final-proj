@@ -4,17 +4,20 @@ import FavouritesCard from "../components/FavouritesCard";
 import favouritesbanner from "../assets/images/favouritesbanner.jpg";
 
 export default function Favourites() {
+    // Retrieve favorite products from localStorage initially
     const [favorites, setFavorites] = useState(
         JSON.parse(localStorage.getItem("favorites")) || []
     );
 
+    // Save favorites to localStorage whenever it changes
     useEffect(() => {
         localStorage.setItem("favorites", JSON.stringify(favorites));
     }, [favorites]);
 
+    // Handle removing a product from favorites
     const removeFromFavorites = (index) => {
         const updatedFavorites = favorites.filter((_, i) => i !== index);
-        setFavorites(updatedFavorites); 
+        setFavorites(updatedFavorites); // Update state
     };
 
     return (
@@ -32,7 +35,7 @@ export default function Favourites() {
                             price={product.price} 
                             description={product.description} 
                             imageUrl={product.imageUrl}
-                            onRemove={() => removeFromFavorites(index)}
+                            onRemove={() => removeFromFavorites(index)} // Pass remove handler
                         />
                     ))
                 ) : (

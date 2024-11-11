@@ -35,30 +35,11 @@ export default function Product({ name, price, description, imageUrl }) {
     setQuantity((prevQuantity) => (prevQuantity > 1 ? prevQuantity - 1 : 1));
   };
 
-  // Handle adding the product to favorites
-  const addToFavorites = () => {
-    const product = { name, price, description, imageUrl };
-    const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    const updatedFavorites = [...storedFavorites, product];
-    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
-    
-    // Show an alert when the product is added to favorites
-    alert(`${name} has been added to your favorites!`);
-  };
-
   return (
     <div>
       <div className={styles.container} onClick={handleContainerClick}>
         <img src={imageUrl || placeholder} className={styles.productImg} alt={name || "Product"} />
-        <img 
-          src={Heart} 
-          className={styles.heartIcon} 
-          alt="Heart Icon" 
-          onClick={(e) => {
-            e.stopPropagation(); // Prevent triggering the container click
-            addToFavorites();
-          }}
-        />
+        <img src={Heart} className={styles.heartIcon} alt="Heart Icon" />
         <p className={styles.productName}>{name || "Product Name"}</p>
         <div className={styles.infoAndCart}>
           <p>${price || "0.00"}</p>
