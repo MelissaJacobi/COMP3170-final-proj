@@ -41,9 +41,6 @@ export default function Product({ name, price, description, imageUrl }) {
     const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
     const updatedFavorites = [...storedFavorites, product];
     localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
-    
-    // Show an alert when the product is added to favorites
-    alert(`${name} has been added to your favorites!`);
   };
 
   return (
