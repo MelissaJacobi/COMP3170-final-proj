@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Product from "../components/Product";
 import styles from "./Bread.module.css";
 
-export default function Bread() {
+export default function Pastries() {
   const [products, setProducts] = useState([]);
   const [productName, setProductName] = useState(""); 
   const [productPrice, setProductPrice] = useState("");
@@ -10,28 +10,15 @@ export default function Bread() {
   const [productImageUrl, setProductImageUrl] = useState("");
   const [showForm, setShowForm] = useState(false);
 
-  useEffect(() => {
-    const storedProducts = localStorage.getItem("breadProducts");
-    if (storedProducts) {
-      setProducts(JSON.parse(storedProducts));
-    }
-  }, []);
-
   const handleAddProduct = (e) => {
     e.preventDefault();
     if (productName.trim() && productPrice.trim() && productDescription.trim() && productImageUrl.trim()) {
-      const newProduct = { 
+      setProducts([...products, { 
         name: productName,
         price: productPrice,
         description: productDescription,
         imageUrl: productImageUrl
-      };
-      
-      const updatedProducts = [...products, newProduct];
-      setProducts(updatedProducts);
-
-      localStorage.setItem("breadProducts", JSON.stringify(updatedProducts));
-
+      }]);
       setProductName("");
       setProductPrice("");
       setProductDescription("");
@@ -46,7 +33,7 @@ export default function Bread() {
   return (
     <div className={styles.container}>
       <div className={styles.banner}>
-        <h1>Bread</h1>
+        <h1>Pastries</h1>
       </div>
 
       <button onClick={toggleFormVisibility} className={styles.toggleFormButton}>

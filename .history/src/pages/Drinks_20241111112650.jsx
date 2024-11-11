@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Product from "../components/Product";
 import styles from "./Bread.module.css";
 
-export default function Bread() {
+export default function Drinks() {
   const [products, setProducts] = useState([]);
   const [productName, setProductName] = useState(""); 
   const [productPrice, setProductPrice] = useState("");
@@ -10,8 +10,9 @@ export default function Bread() {
   const [productImageUrl, setProductImageUrl] = useState("");
   const [showForm, setShowForm] = useState(false);
 
+  // Load drinks products from localStorage on component mount
   useEffect(() => {
-    const storedProducts = localStorage.getItem("breadProducts");
+    const storedProducts = localStorage.getItem("drinksProducts");
     if (storedProducts) {
       setProducts(JSON.parse(storedProducts));
     }
@@ -30,7 +31,8 @@ export default function Bread() {
       const updatedProducts = [...products, newProduct];
       setProducts(updatedProducts);
 
-      localStorage.setItem("breadProducts", JSON.stringify(updatedProducts));
+      // Save to localStorage with the unique "drinksProducts" key
+      localStorage.setItem("drinksProducts", JSON.stringify(updatedProducts));
 
       setProductName("");
       setProductPrice("");
@@ -46,7 +48,7 @@ export default function Bread() {
   return (
     <div className={styles.container}>
       <div className={styles.banner}>
-        <h1>Bread</h1>
+        <h1>Drinks</h1>
       </div>
 
       <button onClick={toggleFormVisibility} className={styles.toggleFormButton}>

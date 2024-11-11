@@ -2,36 +2,40 @@ import { useState, useEffect } from "react";
 import Product from "../components/Product";
 import styles from "./Bread.module.css";
 
-export default function Bread() {
-  const [products, setProducts] = useState([]);
-  const [productName, setProductName] = useState(""); 
+export default function Pastries() {
+  const [products, setProducts] = useState([]); // State to store products
+  const [productName, setProductName] = useState(""); // State for form inputs
   const [productPrice, setProductPrice] = useState("");
   const [productDescription, setProductDescription] = useState("");
   const [productImageUrl, setProductImageUrl] = useState("");
-  const [showForm, setShowForm] = useState(false);
+  const [showForm, setShowForm] = useState(false); // State to control form visibility
 
   useEffect(() => {
-    const storedProducts = localStorage.getItem("breadProducts");
-    if (storedProducts) {
-      setProducts(JSON.parse(storedProducts));
+    // Load products from local storage on component mount
+    const savedProducts = JSON.parse(localStorage.getItem("products"));
+    if (savedProducts) {
+      setProducts(savedProducts);
     }
   }, []);
+
+  useEffect(() => {
+    // Save products to local storage whenever the products array changes
+    localStorage.setItem("products", JSON.stringify(products));
+  }, [products]);
 
   const handleAddProduct = (e) => {
     e.preventDefault();
     if (productName.trim() && productPrice.trim() && productDescription.trim() && productImageUrl.trim()) {
-      const newProduct = { 
+      // Add new product with all details to array
+      const newProduct = {
         name: productName,
         price: productPrice,
         description: productDescription,
         imageUrl: productImageUrl
       };
-      
-      const updatedProducts = [...products, newProduct];
-      setProducts(updatedProducts);
+      setProducts([...products, newProduct]);
 
-      localStorage.setItem("breadProducts", JSON.stringify(updatedProducts));
-
+      // Clear inputs after adding
       setProductName("");
       setProductPrice("");
       setProductDescription("");
@@ -46,13 +50,15 @@ export default function Bread() {
   return (
     <div className={styles.container}>
       <div className={styles.banner}>
-        <h1>Bread</h1>
+        <h1>Pastries</h1>
       </div>
 
+      {/* Button to toggle form visibility */}
       <button onClick={toggleFormVisibility} className={styles.toggleFormButton}>
         {showForm ? "Hide Form" : "Add New Product"}
       </button>
 
+      {/* Collapsible form */}
       {showForm && (
         <form onSubmit={handleAddProduct} className={styles.addProductForm}>
           <input
@@ -69,6 +75,12 @@ export default function Bread() {
             placeholder="Enter product price"
             className={styles.productInput}
           />
+          <textarea
+            value={productDescription}
+            onChange={(e) => setProductDescription(e.target.value)}
+            placeholder="Enter product description"
+            className={styles.productInput}
+          />
           <input
             type="text"
             value={productImageUrl}
@@ -76,16 +88,11 @@ export default function Bread() {
             placeholder="Enter image URL"
             className={styles.productInput}
           />
-          <textarea
-            value={productDescription}
-            onChange={(e) => setProductDescription(e.target.value)}
-            placeholder="Enter product description"
-            className={styles.productInput}
-          />
           <button type="submit" className={styles.addButton}>Add Product</button>
         </form>
       )}
 
+      {/* Display products */}
       <div className={styles.products}>
         {products.map((product, index) => (
           <Product 

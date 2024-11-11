@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Product from "../components/Product";
 import styles from "./Bread.module.css";
 
-export default function Bread() {
+export default function Pastries() {
   const [products, setProducts] = useState([]);
   const [productName, setProductName] = useState(""); 
   const [productPrice, setProductPrice] = useState("");
@@ -11,7 +11,7 @@ export default function Bread() {
   const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
-    const storedProducts = localStorage.getItem("breadProducts");
+    const storedProducts = localStorage.getItem("pastriesProducts");
     if (storedProducts) {
       setProducts(JSON.parse(storedProducts));
     }
@@ -30,7 +30,7 @@ export default function Bread() {
       const updatedProducts = [...products, newProduct];
       setProducts(updatedProducts);
 
-      localStorage.setItem("breadProducts", JSON.stringify(updatedProducts));
+      localStorage.setItem("pastriesProducts", JSON.stringify(updatedProducts));
 
       setProductName("");
       setProductPrice("");
@@ -43,10 +43,15 @@ export default function Bread() {
     setShowForm((prevShowForm) => !prevShowForm);
   };
 
+  const clearProducts = () => {
+    localStorage.removeItem("pastriesProducts");
+    setProducts([]); // Clear the products in the component state
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.banner}>
-        <h1>Bread</h1>
+        <h1>Pastries</h1>
       </div>
 
       <button onClick={toggleFormVisibility} className={styles.toggleFormButton}>
@@ -85,6 +90,10 @@ export default function Bread() {
           <button type="submit" className={styles.addButton}>Add Product</button>
         </form>
       )}
+
+    <button onClick={clearProducts} className={styles.clearButton}>
+      Clear Products
+    </button>
 
       <div className={styles.products}>
         {products.map((product, index) => (

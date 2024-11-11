@@ -2,36 +2,41 @@ import { useState, useEffect } from "react";
 import Product from "../components/Product";
 import styles from "./Bread.module.css";
 
-export default function Bread() {
+export default function Pastries() {
   const [products, setProducts] = useState([]);
-  const [productName, setProductName] = useState(""); 
+  const [productName, setProductName] = useState("");
   const [productPrice, setProductPrice] = useState("");
   const [productDescription, setProductDescription] = useState("");
   const [productImageUrl, setProductImageUrl] = useState("");
   const [showForm, setShowForm] = useState(false);
 
+  // Load products from localStorage on component mount
   useEffect(() => {
-    const storedProducts = localStorage.getItem("breadProducts");
-    if (storedProducts) {
-      setProducts(JSON.parse(storedProducts));
+    const savedProducts = JSON.parse(localStorage.getItem("products"));
+    if (savedProducts) {
+      setProducts(savedProducts);
+      console.log("Loaded products from localStorage:", savedProducts);
     }
-  }, []);
+  }, []); // Empty dependency array ensures this runs only once on mount
+
+  // Save products to localStorage whenever the products array changes
+  useEffect(() => {
+    localStorage.setItem("products", JSON.stringify(products));
+    console.log("Saved products to localStorage:", products);
+  }, [products]);
 
   const handleAddProduct = (e) => {
     e.preventDefault();
     if (productName.trim() && productPrice.trim() && productDescription.trim() && productImageUrl.trim()) {
-      const newProduct = { 
-        name: productName,
-        price: productPrice,
-        description: productDescription,
-        imageUrl: productImageUrl
-      };
-      
-      const updatedProducts = [...products, newProduct];
-      setProducts(updatedProducts);
-
-      localStorage.setItem("breadProducts", JSON.stringify(updatedProducts));
-
+      setProducts([
+        ...products,
+        {
+          name: productName,
+          price: productPrice,
+          description: productDescription,
+          imageUrl: productImageUrl
+        }
+      ]);
       setProductName("");
       setProductPrice("");
       setProductDescription("");
@@ -46,7 +51,7 @@ export default function Bread() {
   return (
     <div className={styles.container}>
       <div className={styles.banner}>
-        <h1>Bread</h1>
+        <h1>Pastries</h1>
       </div>
 
       <button onClick={toggleFormVisibility} className={styles.toggleFormButton}>
@@ -88,12 +93,12 @@ export default function Bread() {
 
       <div className={styles.products}>
         {products.map((product, index) => (
-          <Product 
-            key={index} 
-            name={product.name} 
-            price={product.price} 
-            description={product.description} 
-            imageUrl={product.imageUrl} 
+          <Product
+            key={index}
+            name={product.name}
+            price={product.price}
+            description={product.description}
+            imageUrl={product.imageUrl}
           />
         ))}
       </div>

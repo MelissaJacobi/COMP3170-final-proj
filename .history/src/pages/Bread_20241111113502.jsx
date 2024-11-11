@@ -10,6 +10,7 @@ export default function Bread() {
   const [productImageUrl, setProductImageUrl] = useState("");
   const [showForm, setShowForm] = useState(false);
 
+  // Load drinks products from localStorage on component mount
   useEffect(() => {
     const storedProducts = localStorage.getItem("breadProducts");
     if (storedProducts) {
@@ -30,6 +31,7 @@ export default function Bread() {
       const updatedProducts = [...products, newProduct];
       setProducts(updatedProducts);
 
+      // Save to localStorage with the unique "drinksProducts" key
       localStorage.setItem("breadProducts", JSON.stringify(updatedProducts));
 
       setProductName("");
