@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Product from "../components/Product";
 import styles from "./Bread.module.css";
 
-export default function Drinks() {
+export default function Seasonal() {
   const [products, setProducts] = useState([]);
   const [productName, setProductName] = useState(""); 
   const [productPrice, setProductPrice] = useState("");
@@ -12,7 +12,7 @@ export default function Drinks() {
 
   // Load drinks products from localStorage on component mount
   useEffect(() => {
-    const storedProducts = localStorage.getItem("drinksProducts");
+    const storedProducts = localStorage.getItem("seasonalProducts");
     if (storedProducts) {
       setProducts(JSON.parse(storedProducts));
     }
@@ -32,7 +32,7 @@ export default function Drinks() {
       setProducts(updatedProducts);
 
       // Save to localStorage with the unique "drinksProducts" key
-      localStorage.setItem("drinksProducts", JSON.stringify(updatedProducts));
+      localStorage.setItem("seasonalProducts", JSON.stringify(updatedProducts));
 
       setProductName("");
       setProductPrice("");

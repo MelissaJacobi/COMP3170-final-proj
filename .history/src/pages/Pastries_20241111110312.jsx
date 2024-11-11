@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Product from "../components/Product";
 import styles from "./Bread.module.css";
 
-export default function Drinks() {
+export default function Pastries() {
   const [products, setProducts] = useState([]);
   const [productName, setProductName] = useState(""); 
   const [productPrice, setProductPrice] = useState("");
@@ -10,9 +10,9 @@ export default function Drinks() {
   const [productImageUrl, setProductImageUrl] = useState("");
   const [showForm, setShowForm] = useState(false);
 
-  // Load drinks products from localStorage on component mount
+  // Load products from localStorage when component mounts
   useEffect(() => {
-    const storedProducts = localStorage.getItem("drinksProducts");
+    const storedProducts = localStorage.getItem("pastriesProducts");
     if (storedProducts) {
       setProducts(JSON.parse(storedProducts));
     }
@@ -31,9 +31,10 @@ export default function Drinks() {
       const updatedProducts = [...products, newProduct];
       setProducts(updatedProducts);
 
-      // Save to localStorage with the unique "drinksProducts" key
-      localStorage.setItem("drinksProducts", JSON.stringify(updatedProducts));
+      // Save to localStorage
+      localStorage.setItem("pastriesProducts", JSON.stringify(updatedProducts));
 
+      // Clear form fields
       setProductName("");
       setProductPrice("");
       setProductDescription("");
@@ -48,7 +49,7 @@ export default function Drinks() {
   return (
     <div className={styles.container}>
       <div className={styles.banner}>
-        <h1>Drinks</h1>
+        <h1>Pastries</h1>
       </div>
 
       <button onClick={toggleFormVisibility} className={styles.toggleFormButton}>
