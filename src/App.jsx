@@ -15,29 +15,32 @@ import ShoppingCart from './pages/ShoppingCart';
 import Profile from './pages/Profile';
 import Reviews from './pages/Reviews';
 import Favourites from './pages/Favourites';
+import CartInformation from './components/CartInfo';
 
 function App() {
   return (
     <Router>
-      <div className={styles.appContainer}>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/menu" element={<Menu />} />
-          <Route path="/menu/bread" element={<Bread />} />
-          <Route path="/menu/pastries" element={<Pastries />} />
-          <Route path="/menu/cakes" element={<Cakes />} />
-          <Route path="/menu/drinks" element={<Drinks />} />
-          <Route path="/menu/seasonal" element={<Seasonal />} />
-          <Route path="/orderpickup" element={<OrderPickUp />} />
-          <Route path="/orderdelivery" element={<OrderDelivery />} />
-          <Route path="/shoppingcart" element={<ShoppingCart/>}/>
-          <Route path="/profile" element={<Profile />}/>
-          <Route path="/Reviews" element={<Reviews />}/>
-          <Route path="/Favourites" element={<Favourites />} />
-        </Routes>
-        <Footer />
-      </div>
+      <CartInformation>
+        <div className={styles.appContainer}>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/menu" element={<Menu />} />
+            <Route path="/menu/bread" element={<Bread />} />
+            <Route path="/menu/pastries" element={<Pastries />} />
+            <Route path="/menu/cakes" element={<Cakes />} />
+            <Route path="/menu/drinks" element={<Drinks />} />
+            <Route path="/menu/seasonal" element={<Seasonal />} />
+            <Route path="/orderpickup" element={<OrderPickUp />} />
+            <Route path="/orderdelivery" element={<OrderDelivery />} />
+            <Route path="/shoppingcart" element={<ShoppingCart/>}/>
+            <Route path="/profile" element={<Profile />}/>
+            <Route path="/Reviews" element={<Reviews />}/>
+            <Route path="/Favourites" element={<Favourites />} />
+          </Routes>
+          <Footer />
+        </div>
+      </CartInformation>
     </Router>
   );
 }

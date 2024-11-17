@@ -1,7 +1,7 @@
 import styles from "./ShoppingCartCard.module.css";
 import { useState } from "react";
 
-export default function ShoppingCartCard( {product, updateQuantity} ) {
+export default function ShoppingCartCard( {product, updateQuantity, removeProduct} ) {
 
     const [quantity, setQuantity] = useState(product.quantity);
 
@@ -31,7 +31,7 @@ export default function ShoppingCartCard( {product, updateQuantity} ) {
                     <p>{product.quantity}</p>
                     <button className={styles.subtractBtn} onClick={handleAddQuantity}>&#43;</button>
                 </div>
-                <p className={styles.amount}>${(product.price * quantity.toFixed(2))}</p>
+                <p className={styles.amount}>${(product.price * quantity).toFixed(2)}</p>
             </div>
         </>
     )
