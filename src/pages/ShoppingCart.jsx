@@ -4,10 +4,12 @@ import OrderTotal from "../components/OrderTotal";
 import strawberrycake from "../assets/images/strawberrycake.png";
 import yule_log from "../assets/images/yule_log.jpg";
 import sourdough from "../assets/images/sourdough.jpeg";
+import { MdOutlineProductionQuantityLimits } from "react-icons/md";
+import { useState } from "react";
 
 export default function ShoppingCart() {
 
-    const products = [
+    const [products, setProducts] = useState([
         {
             id: 1,
             name: "Yule Log",
@@ -35,13 +37,18 @@ export default function ShoppingCart() {
             image: strawberrycake,
             alttext: "strawberrycake"
         }
-    ]
+    ])
 
-    const overallPrice = products.map(product => ({
-        ...product, amount: product.price * product.quantity
-    }));
+    function updateProductQuantity(id, newQuantity) {
+        setProducts((items) => items.map(product => product.id === id ? {
+            ...product, 
+            quantity: newQuantity,
+            amount: product.price * newQuantity 
+            } : product
+        ))
+    }
 
-    const productList = overallPrice.map(product => <ShoppingCartCard key={product.id} product={{...product, amount: `$${product.amount.toFixed(2)}`, price: `$${product.amount.toFixed(2)}`}}/>)
+    const productList = products.map(product => <ShoppingCartCard key={product.id} product={product} updateQuantity={updateProductQuantity}/>)
 
     return (
         <>
@@ -59,7 +66,7 @@ export default function ShoppingCart() {
                     {productList}
                 </div>
                 <div>
-                    <OrderTotal products={overallPrice}/>
+                    <OrderTotal products={products}/>
                 </div>
             </div>
         </>

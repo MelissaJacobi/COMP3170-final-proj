@@ -9,14 +9,19 @@ export default function OrderTotal({ products }) {
     const [grandTotal, setGrandTotal] = useState(0);
 
     useEffect(() => {
-        const total = products.reduce((sum, product) => sum + product.amount, 0);
-        setSubtotal(total);
+        if (Array.isArray(products) && products.length > 0) {
+            const total = products.reduce((sum, product) => sum + Number(product.amount || 0), 0);
+            setSubtotal(total);
 
-        const tax = total * 0.12;
-        setSalesTax(tax);
+            const tax = total * 0.12;
+            setSalesTax(tax)
 
- 
-        setGrandTotal(total + tax);
+            setGrandTotal(total + tax);
+        } else {
+            setSubtotal(0);
+            setSalesTax(0);
+            setGrandTotal(0);
+        }
     }, [products]);
 
     return (
