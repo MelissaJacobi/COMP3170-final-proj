@@ -1,6 +1,10 @@
 import styles from './CartSummary.module.css';
 
 export default function CartSummary({ subtotal, total }) {
+  const correctAmount = (amount) => {
+    return isNaN(amount) ? "0.00" : amount.toFixed(2);
+  }
+
   return (
     <div className={styles.cartSummary}>
       <div className={styles.discountCode}>
@@ -10,11 +14,11 @@ export default function CartSummary({ subtotal, total }) {
       <div className={styles.pricing}>
         <div className={styles.priceRow}>
           <span>Subtotal</span>
-          <span>CA${subtotal.toFixed(2)}</span>
+          <span>CA${correctAmount(subtotal)}</span>
         </div>
         <div className={styles.priceRow}>
           <span>Total</span>
-          <span>CA${total.toFixed(2)}</span>
+          <span>CA${correctAmount(total)}</span>
         </div>
       </div>
     </div>

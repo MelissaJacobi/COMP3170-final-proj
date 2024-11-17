@@ -1,6 +1,14 @@
 import styles from './CartItem.module.css';
 
-export default function CartItem({ item }) {
+export default function CartItem({ item, updateItemQuantity }) {
+  const quantityChange = (e) => {
+    const newQuantity = parseInt(e.target.value, 10);
+
+    if(newQuantity > 0){
+    updateItemQuantity(item.id, newQuantity);
+    }
+  }
+
   return (
     <div className={styles.cartItem}>
       <img src={item.image} alt={item.name} className={styles.productImage} />
@@ -12,7 +20,11 @@ export default function CartItem({ item }) {
         <p>CA${item.price.toFixed(2)}</p>
         <div className={styles.quantityControl}>
           <span>Qty</span>
-          <input type="number" value={item.quantity} readOnly />
+          <input 
+          type="number" 
+          value={item.quantity} 
+          onChange={quantityChange}
+          />
         </div>
         <button className={styles.removeButton}>Remove</button>
       </div>
