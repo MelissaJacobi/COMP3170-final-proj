@@ -1,13 +1,19 @@
 import { useCart } from "./CartInfo";
 import styles from "./OrderTotal.module.css";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function OrderTotal() {
-    const { subtotal } = useCart();
+    const { subtotal, products } = useCart();
 
     const taxRate = 0.12;
     const taxAmount = subtotal * taxRate;
     const total = subtotal + taxAmount;
+
+    const navigate = useNavigate();
+
+    const handleCheckout = () => {
+        navigate("/OrderPickUp", { state: { items: products, subtotal, total } });
+    };
 
     const correctAmount = (amount) => {
         return isNaN(amount) ? '0.00' : amount.toFixed(2);
@@ -16,7 +22,7 @@ export default function OrderTotal() {
     return (
         <div className={styles.orderTotalContainer}>
             <div className={styles.pricing}>
-            <div className={styles.line}></div>
+                <div className={styles.line}></div>
                 <div className={styles.subtotal}>
                     <span>Subtotal: </span>
                     <span>CA${correctAmount(subtotal)}</span>
@@ -35,9 +41,9 @@ export default function OrderTotal() {
                     <Link to="/">
                         <button className={styles.backBtn}>Back to Shopping</button>
                     </Link>
-                    <Link to="/OrderPickUp">
-                    <button className={styles.checkoutBtn}>Checkout</button>
-                    </Link>
+                    <button onClick={handleCheckout} className={styles.checkoutBtn}>
+                        Checkout
+                    </button>
                 </div>
             </div>
         </div>
