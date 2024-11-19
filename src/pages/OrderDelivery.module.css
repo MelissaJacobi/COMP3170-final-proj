@@ -1,16 +1,35 @@
 .container {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   padding: 20px;
+  margin-top: 7rem; 
+  margin-bottom: 3rem; 
 }
 
 .pickupform {
-  width: 50%; 
-  padding-right: 20px;
+  width: 50%;
+  display: flex;
+  flex-direction: column; 
+  gap: 20px; 
+  margin-top: -30px; 
 }
 
 .cartsection {
   width: 45%; 
   padding-left: 20px;
-  padding-top: 20px; 
+  padding-top: 100px;
+}
+
+.orderButton {
+  align-self: flex-start; 
+  margin-left: 70px; 
+  margin-bottom: -30px; 
+  margin-top: 60px; 
+}
+
+.bar {
+  position: absolute; 
+  margin-left: 3.5rem; 
+  margin-top: 1.5rem; 
+  transform: scale(0.8); 
 }

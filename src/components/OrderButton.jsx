@@ -1,4 +1,4 @@
-import { useNavigate} from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom'; 
 import styles from './OrderButton.module.css';
 
 export default function OrderButton({ selectedOption }) {
@@ -6,9 +6,9 @@ export default function OrderButton({ selectedOption }) {
 
   const handleNavigation = (option) => {
     if (option === 'pickup') {
-      navigate.push('/orderpickup');
+      navigate('/orderpickup');
     } else {
-      navigate.push('/orderdelivery');
+      navigate('/orderdelivery'); 
     }
   };
 

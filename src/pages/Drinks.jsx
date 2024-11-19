@@ -1,21 +1,22 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Product from "../components/Product";
 import styles from "./Bread.module.css";
 
 export default function Drinks() {
-  const [products, setProducts] = useState([]);
+  const placeholderProducts = Array.from({ length: 8 }, (_, i) => ({
+    name: `Product ${i + 1}`,
+    price: `${(i + 1) * 10}.00`,
+    description: `Description for Product ${i + 1}`,
+    imageUrl: "https://via.placeholder.com/150",
+  }));
+
+  const [products, setProducts] = useState(placeholderProducts);
+
   const [productName, setProductName] = useState(""); 
   const [productPrice, setProductPrice] = useState("");
   const [productDescription, setProductDescription] = useState("");
   const [productImageUrl, setProductImageUrl] = useState("");
   const [showForm, setShowForm] = useState(false);
-
-  useEffect(() => {
-    const storedProducts = localStorage.getItem("drinksProducts");
-    if (storedProducts) {
-      setProducts(JSON.parse(storedProducts));
-    }
-  }, []);
 
   const handleAddProduct = (e) => {
     e.preventDefault();
@@ -26,11 +27,9 @@ export default function Drinks() {
         description: productDescription,
         imageUrl: productImageUrl
       };
-      
-      const updatedProducts = [...products, newProduct];
-      setProducts(updatedProducts);
 
-      localStorage.setItem("drinksProducts", JSON.stringify(updatedProducts));
+      const updatedProducts = [newProduct, ...products];
+      setProducts(updatedProducts);
 
       setProductName("");
       setProductPrice("");

@@ -25,6 +25,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 5rem;
+    margin-top: -80px; 
 }
 
 .toggleFormButton {
