@@ -1,0 +1,44 @@
+.cartSummary {
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
+
+.discountCode {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.discountCode input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+}
+
+.discountCode button {
+  padding: 10px;
+  background-color: #090502;
+  color: white;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.pricing {
+  display: flex;
+  flex-direction: column;
+}
+
+.priceRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.applyButton {
+  width: 100px; 
+  height: 40.5px; 
+  background-color: var(--accent-color) !important; 
+  border-radius: 0 !important; 
+}
