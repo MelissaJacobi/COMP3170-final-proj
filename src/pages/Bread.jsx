@@ -87,7 +87,7 @@ export default function Bread() {
 
       <div className={styles.products}>
         {products.map((product, index) => (
-          <Product 
+          <Product
             key={index} 
             name={product.name} 
             price={product.price} 

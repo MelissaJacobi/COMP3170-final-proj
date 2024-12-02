@@ -1,13 +1,14 @@
 import { useState } from "react";
-import styles from './Product.module.css';
+import styles from "./Product.module.css";
 import placeholder from "../assets/images/placeholder.jpg";
 import { PiShoppingCart } from "react-icons/pi";
-import Heart from "../assets/images/Heart.svg";
+import { IoHeartOutline, IoHeartSharp } from "react-icons/io5"; 
 
-export default function Product({ name, price, description, imageUrl }) {
+export default function Product({ name, price, description, imageUrl, updateCart }) {
   const [showPopup, setShowPopup] = useState(false);
   const [selectedSize, setSelectedSize] = useState("8\"");
   const [quantity, setQuantity] = useState(1);
+  const [isFavorited, setIsFavorited] = useState(false);
 
   const handleContainerClick = () => setShowPopup(true);
   const handleClosePopup = () => setShowPopup(false);
@@ -23,7 +24,7 @@ export default function Product({ name, price, description, imageUrl }) {
 
   const addToCart = () => {
     const cartItem = {
-      id: `${name}-${selectedSize}`, 
+      id: `${name}-${selectedSize}`,
       name,
       price,
       description,
@@ -42,22 +43,49 @@ export default function Product({ name, price, description, imageUrl }) {
     }
 
     localStorage.setItem("cart", JSON.stringify(storedCart));
+    updateCart(storedCart); 
     alert(`${name} has been added to your cart!`);
+  };
+
+  const addToFavorites = () => {
+    const favoriteItem = {
+      id: name,
+      name,
+      price,
+      imageUrl,
+    };
+
+    const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    const isAlreadyFavorite = storedFavorites.find((item) => item.id === favoriteItem.id);
+
+    if (isAlreadyFavorite) {
+      alert(`${name} is already in your favorites!`);
+    } else {
+      storedFavorites.push(favoriteItem);
+      localStorage.setItem("favorites", JSON.stringify(storedFavorites));
+      alert(`${name} has been added to your favorites!`);
+    }
+
+    setIsFavorited(true); 
   };
 
   return (
     <div>
       <div className={styles.container} onClick={handleContainerClick}>
         <img src={imageUrl || placeholder} className={styles.productImg} alt={name || "Product"} />
-        <img
-          src={Heart}
+        <div
           className={styles.heartIcon}
-          alt="Heart Icon"
           onClick={(e) => {
-            e.stopPropagation();
+            e.stopPropagation(); 
             addToFavorites();
           }}
-        />
+        >
+          {isFavorited ? (
+            <IoHeartSharp size={24} color="darkred" /> 
+          ) : (
+            <IoHeartOutline size={24} color="black" /> 
+          )}
+        </div>
         <p className={styles.productName}>{name || "Product Name"}</p>
         <div className={styles.infoAndCart}>
           <p>${price || "0.00"}</p>

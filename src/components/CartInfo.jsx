@@ -42,8 +42,10 @@ export default function CartInformation({ children }) {
     ]);
 
     function updateProductQuantity(id, newQuantity) {
-        if (newQuantity <= 0) return;
         setProducts((items) => {
+            if (newQuantity <= 0) {
+                return items.filter(product => product.id !== id);
+            }
             return items.map(product =>
                 product.id === id ? {
                     ...product,

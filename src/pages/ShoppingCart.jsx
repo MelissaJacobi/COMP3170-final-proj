@@ -4,10 +4,7 @@ import ShoppingCartCard from "../components/ShoppingCartCard";
 import OrderTotal from "../components/OrderTotal";
 
 export default function ShoppingCart() {
-
-    const { products, updateProductQuantity, removeProduct } = useCart();
-
-    const productList = products.map(product => <ShoppingCartCard key={product.id} product={product} updateQuantity={updateProductQuantity}/>)
+    const { products, updateProductQuantity } = useCart();
 
     return (
         <>
@@ -22,12 +19,18 @@ export default function ShoppingCart() {
                     <div className={styles.line}></div>
                 </div>
                 <div className={styles.productCard}>
-                    {productList}
+                    {products.map(product => (
+                        <ShoppingCartCard 
+                            key={product.id} 
+                            product={product} 
+                            updateQuantity={updateProductQuantity} 
+                        />
+                    ))}
                 </div>
                 <div>
-                    <OrderTotal products={products}/>
+                    <OrderTotal products={products} />
                 </div>
             </div>
         </>
-    )
+    );
 }
