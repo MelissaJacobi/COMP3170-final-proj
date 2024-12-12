@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Product from "../components/Product";
 import styles from "./Bread.module.css";
+import bread from "../assets/images/bread.jpg";
 
 export default function Bread() {
   const placeholderProducts = Array.from({ length: 8 }, (_, i) => ({
@@ -46,6 +47,7 @@ export default function Bread() {
     <div className={styles.container}>
       <div className={styles.banner}>
         <h1>Bread</h1>
+        <img src={bread} alt="bread"/>
       </div>
 
       <button onClick={toggleFormVisibility} className={styles.toggleFormButton}>

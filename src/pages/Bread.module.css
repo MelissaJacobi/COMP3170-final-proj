@@ -9,7 +9,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+    position: relative;
+    font-family: var(--heading-text);
+    overflow: hidden;
+}
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .container h1 {
@@ -17,6 +28,13 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    z-index: 1;
+
+    text-shadow: 
+    1px 1px 5px rgba(0, 0, 0, 0.4),
+    0 0 10px rgba(0, 0, 0, 0.4), 
+    0 0 20px rgba(0, 0, 0, 0.2),
+    0 0 25px rgba(255, 165, 0, 0.4);
 }
 
 .products {

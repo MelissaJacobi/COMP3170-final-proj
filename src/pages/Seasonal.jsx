@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Product from "../components/Product";
 import styles from "./Bread.module.css";
+import seasonal from "../assets/images/seasonal.jpg";
 
 export default function Seasonal() {
   const placeholderProducts = Array.from({ length: 8 }, (_, i) => ({
@@ -46,6 +47,7 @@ export default function Seasonal() {
     <div className={styles.container}>
       <div className={styles.banner}>
         <h1>Seasonal</h1>
+        <img src={seasonal} alt="seasonal treats"/>
       </div>
 
       <button onClick={toggleFormVisibility} className={styles.toggleFormButton}>
