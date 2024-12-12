@@ -4,12 +4,35 @@ import styles from "./Bread.module.css";
 import bread from "../assets/images/bread.jpg";
 
 export default function Bread() {
+  const productNames = [
+    "French Baguette",
+    "Sourdough",
+    "Rye Bread",
+    "Ciabatta",
+    "Focaccia",
+    "Multigrain Bread",
+    "Pita Bread",
+    "Brioche Buns",
+  ];
+  
+  const imageUrls = [
+    "https://as2.ftcdn.net/v2/jpg/08/61/54/75/1000_F_861547505_HbsmGLXqLTvNfe7wgTDjAAPC7vih6SlY.jpg",
+    "https://as1.ftcdn.net/v2/jpg/01/28/30/92/1000_F_128309284_WKdyAq271bsntmCjtRfNCg0uNEOVrxPD.jpg",
+    "https://as2.ftcdn.net/v2/jpg/01/16/40/01/1000_F_116400193_VNiO98PlemhhtPbafbRf0U59fRIAboMw.jpg",
+    "https://as2.ftcdn.net/v2/jpg/10/55/45/79/1000_F_1055457919_TXXd2mTQQvPvSzeErFv96LHSqmsqLQmt.jpg",
+    "https://as2.ftcdn.net/v2/jpg/01/66/38/89/1000_F_166388963_9gnYZ44gooPAQfY5fIbCSRlDneiYwXew.jpg",
+    "https://as2.ftcdn.net/v2/jpg/10/28/71/43/1000_F_1028714341_XPFrzlq4xOef24LgQLEsq1fXbesnkF44.jpg",
+    "https://as2.ftcdn.net/v2/jpg/01/72/22/37/1000_F_172223709_SAKuj23tINunYmq64wdC0jN3cIie61MP.jpg",
+    "https://as1.ftcdn.net/v2/jpg/02/97/06/76/1000_F_297067669_2zPercOK8LOM6ifKRX9HqOzrDiryQhIJ.jpg",
+  ];
+  
   const placeholderProducts = Array.from({ length: 8 }, (_, i) => ({
-    name: `Product ${i + 1}`,
+    name: productNames[i % productNames.length],
     price: `${(i + 1) * 10}.00`,
     description: `Description for Product ${i + 1}`,
-    imageUrl: "https://via.placeholder.com/150",
+    imageUrl: imageUrls[i % imageUrls.length],
   }));
+  
 
   const [products, setProducts] = useState(placeholderProducts);
 

@@ -4,11 +4,33 @@ import styles from "./Bread.module.css";
 import pastry from "../assets/images/pastry.jpg";
 
 export default function Pastries() {
+  const productNames = [
+    "Croissant",
+    "Chocolate Cake",
+    "Chocolate Croissant",
+    "Almond Nut Brownie",
+    "Lime Pistacchio Tart",
+    "Raspberry Cheesecake",
+    "Fruit Danish",
+    "Lemon Tart",
+  ];
+  
+  const imageUrls = [
+    "https://images.pexels.com/photos/3892469/pexels-photo-3892469.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "https://images.pexels.com/photos/6390644/pexels-photo-6390644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "https://images.pexels.com/photos/887853/pexels-photo-887853.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "https://images.pexels.com/photos/1346217/pexels-photo-1346217.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "https://images.pexels.com/photos/29653155/pexels-photo-29653155/free-photo-of-delicious-cheesecake-with-berry-sauce-and-fresh-fruits.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "https://images.pexels.com/photos/23369274/pexels-photo-23369274/free-photo-of-puff-pastry-on-a-cutting-board.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "https://images.pexels.com/photos/18784896/pexels-photo-18784896/free-photo-of-cookie-with-cream.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  ];
+  
   const placeholderProducts = Array.from({ length: 8 }, (_, i) => ({
-    name: `Product ${i + 1}`,
+    name: productNames[i % productNames.length],
     price: `${(i + 1) * 10}.00`,
     description: `Description for Product ${i + 1}`,
-    imageUrl: "https://via.placeholder.com/150",
+    imageUrl: imageUrls[i % imageUrls.length],
   }));
 
   const [products, setProducts] = useState(placeholderProducts);
